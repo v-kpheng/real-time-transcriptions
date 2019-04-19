@@ -1,0 +1,63 @@
+body, html {
+    background-color: #003f5f;
+    height: 100%;
+}
+
+#videos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#subscriber {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#publisher {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    border: 3px solid white;
+    border-radius: 3px;
+}
+
+#speaker-container {
+}
+
+#speaker {
+    width: 640px;
+    height: 480px;
+    background-color: gray;
+    margin: 0 auto;
+}
+
+#participants-container {
+    display: flex;
+    background-color: #0b516b;
+    justify-content: center;
+}
+
+#transcript {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#participants-container > .OT_subscriber {
+    border: 3px solid white;
+    border-radius: 3px;
+    width: 180px !important;
+    height: 120px !important;
+    margin: 20px;
+}
