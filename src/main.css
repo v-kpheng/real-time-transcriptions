@@ -20,7 +20,6 @@ body {
 #participants-container {
     flex: 0;
     background-color: #003f5f;
-
 }
 
 #participants {
@@ -41,9 +40,4 @@ body {
     width: 180px !important;
     height: 120px !important;
     margin: 20px;
-}
-
-#main-container {
-    display: flex;
-    flex-direction: column;
 }

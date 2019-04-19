@@ -87,7 +87,6 @@ function initializeSession() {
 
   session.on('signal:transcript', function(event) {
     const { data, from } = event;
-    const { connectionId } = session.connection;
 
     document.getElementById('transcript').innerText = data;
   });
