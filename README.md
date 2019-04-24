@@ -46,6 +46,9 @@ grammar colors;                       // Name of this grammar
                                       // Alternative, can also be called 'com.tokbox.grammars.colors'
 public <color> = blue | red | green ; // Grammar rule
 ```
+## Theory of operation
+
+Speech is captured by a recording device.  The API makes a REST call to a Speech Recognition (SR) service (the API is tech agnostic; a different service can be specified and used, like Alexa or Siri), including the (digitized and encoded) speech as the payload to the request.  The SR service returns a response.  If the utterance was understood, a `result` event is fired.  Else, an `error` event is triggered.
 
 ## The code
 
