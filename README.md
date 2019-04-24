@@ -11,30 +11,32 @@ Speech recognition is the ability of a computer to hear what you are saying and 
 Linguistics is the study of language and it's structure.  The words in a language are composed of phonemes, or sounds.
 
 __Phonemes of "food"__
-food -> 'f', 'oo', 'd'
+* `f`
+* `oo`
+* `d`
 
 A dictionary maps words to their pronounications.
 
 __Dictionary with three words__
-food -> 'F', 'oo', 'd'
-is -> 'i', 'z',
-yummy -> 'y', 'uh', 'm', 'e'
+* food: `f`, `oo`, `d`
+* is: `i`, `z`
+* yummy: `y`, `uh`, `m`, `m`
 
 A lexicon helps provide context.
 
 __Lexicon__
-food -> 'noun'
-is -> 'verb'
-yummy -> 'adjective'
+* food: noun
+* is: verb
+* yummy: adjective
 
 Speech is composed of utterances.  Utterances are delimited by some pause.  An utterance can be a word, phrase, one or more sentences, or some mixture of the preceeding.
 
 __Utterances_
-Word: "Hi"
-Phrase: "Open door"
-Sentence: "The door is closed."
-Sentences: "The door is closed.  Please open the door."
-Mix: "The door is closed.  Please open the door.  Fridge"
+* Word: "Hi"
+* Phrase: "Open door"
+* Sentence: "The door is closed."
+* Sentences: "The door is closed.  Please open the door."
+* Mix: "The door is closed.  Please open the door.  Fridge"
 
 The grammar is the words and phrases a speech recognition engine should understand.  The grammar below specifies the words and phrases a speech recognition engine should recognize.
 
