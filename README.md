@@ -31,7 +31,7 @@ __Lexicon__
 
 Speech is composed of utterances.  Utterances are delimited by some pause.  An utterance can be a word, phrase, one or more sentences, or some mixture of the preceeding.
 
-__Utterances_
+__Utterances__
 * Word: "Hi"
 * Phrase: "Open door"
 * Sentence: "The door is closed."
