@@ -1,22 +1,36 @@
 let session;
 
-var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+const api = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition;
+
+if (!api) {
+  throw new Error("This browser doesn't support the Speech Recognition API");
+}
+
+const recognition = new api();
+
+// Language Speech Recognition engine (SR) should understand
+// If not specified, then it will default to the language the user agent
+// (i.e., browser) is set to
 recognition.lang = 'en-US';
 recognition.interimResults = false;
+
+// Keep listening and transcribing as long as the app is open
 recognition.continuous = true;
+
+// Brings up the "Allow microphone access" dialog and starts the SR engine
 recognition.start();
 
+// An utterance (the word(s), phrase(s), and/or sentence(s)) was detected
+// and understood
 recognition.onresult = function(event) {
-  const numTranscripts = Object.keys(event.results).length;
+  // Index of the most recent utterance that was understood
+  const { resultIndex } = event;
 
-  if (!numTranscripts) {
-    console.log('No transcripts');
-    return;
-  }
-
-  const result = event.results[numTranscripts - 1];
+  // Parse the most recent utterance
+  const result = event.results[resultIndex];
   const transcript = result[0].transcript;
 
+  // Broadcast transcript
   session.signal(
     {
       retryAfterReconnect: false,
@@ -36,7 +50,7 @@ recognition.onerror = function(event) {
 };
 
 // (optional) add server code here
-var SERVER_BASE_URL = 'https://v-kpheng-sample-app.herokuapp.com';
+const SERVER_BASE_URL = 'https://v-kpheng-sample-app.herokuapp.com';
 fetch(SERVER_BASE_URL + '/session').then(function(res) {
   return res.json();
 }).then(function(res) {
@@ -59,7 +73,7 @@ function initializeSession() {
   // Subscribe to a newly created stream
 
   // Create a publisher
-  var publisher = OT.initPublisher('speaker', {
+  const publisher = OT.initPublisher('speaker', {
     insertMode: 'append',
     width: '100%',
     height: '100%'
